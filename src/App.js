@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { HomePage, PostForm, NotFound } from "./pages/index";
+import { Routes, Route } from "react-router-dom";
+import { PostProvider } from "./context/postContext";
+import { Toaster } from "react-hot-toast"; //Para mostrar alerts personalizados
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //Todo lo que este por fuera de 'Routes' se renderiza siempre, independientemente de la ruta llamada
+
+    <PostProvider>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/new' element={<PostForm />} />
+        <Route path='/posts/:id' element={<PostForm />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Toaster />
+    </PostProvider>
   );
 }
 
