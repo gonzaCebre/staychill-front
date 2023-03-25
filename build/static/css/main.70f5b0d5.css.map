@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.70f5b0d5.css","mappings":"AAAA,EAGE,sBAFA,QAAS,CACT,SACsB,CACvB,KAGC,kBAA8B","sources":["styles/app.scss"],"sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background: rgb(197, 197, 197);\r\n}"],"names":[],"sourceRoot":""}
